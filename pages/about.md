@@ -1,8 +1,8 @@
 ---
 layout: page
 title: About
-description: 打码改变世界
-keywords: Zhuang Ma, 马壮
+description: Hello Word
+keywords: WINDOWS USER
 comments: true
 menu: 关于
 permalink: /about/
@@ -22,11 +22,12 @@ permalink: /about/
 {% endfor %}
 {% if site.url contains 'mazhuang.org' %}
 <li>
-微信公众号：<br />
-<img style="height:192px;width:192px;border:1px solid lightgrey;" src="{{ site.url }}/assets/images/qrcode.jpg" alt="闷骚的程序员" />
+Bu是公众号：<br />
+<img style="height:192px;width:192px;border:1px solid lightgrey;" src="{{ site.url }}/assets/images/zhanyong.jpg" alt="什么也没有" />
 </li>
 {% endif %}
 </ul>
+
 
 
 ## Skill Keywords
