@@ -102,9 +102,9 @@ E1(a)是一个五维的向量基于Skip-Gram model 预测拿到的得到
 
 E2(a)是一个one-hot向量 基于氨基酸本身静电和疏水的定义的分类，对于特殊氨基酸(.Selenocysteine, Pyrrolysine and unknown amino acids)定义为类型8
 
-![image-20230315151516724](assets/image-20230315151516724.png)
+![image-20230315151516724](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315151516724.png)
 
-E3(a) 基于Transformer预训练得蛋白质编码模型(ESM-1b) 数据--Uniparc 数据库。得到的预训练模型将原始序列映射到没有标签或先验知识的生物特征表示。ESM-1b((已经发表的论文)将相应的蛋白质编码为l1280的特征，其中L表示蛋白质长度。因此，每个氨基酸被表示为![image-20230315152454249](assets/image-20230315152454249.png)
+E3(a) 基于Transformer预训练得蛋白质编码模型(ESM-1b) 数据--Uniparc 数据库。得到的预训练模型将原始序列映射到没有标签或先验知识的生物特征表示。ESM-1b((已经发表的论文)将相应的蛋白质编码为l1280的特征，其中L表示蛋白质长度。因此，每个氨基酸被表示为![image-20230315152454249](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315152454249.png)
 
 **AFTGAN模型得简介**
 
@@ -113,7 +113,7 @@ E3(a) 基于Transformer预训练得蛋白质编码模型(ESM-1b) 数据--Uniparc
 	2 利用图注意力网络提取蛋白质对之间得关系特征
 	3 通过全连接层和三层图啊注意层对提取的特征进行多标签PPI预测
 
-![image-20230315215924593](assets/image-20230315215924593.png)
+![image-20230315215924593](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315215924593.png)
 
 **蛋白质序列特征的提取**
 	蛋白质序列长度为2000个，未满足的蛋白质序列进行截断。每个氨基酸的特征为1293个(E1(a),E2(a),E(3))    2000*1293
@@ -122,7 +122,7 @@ E3(a) 基于Transformer预训练得蛋白质编码模型(ESM-1b) 数据--Uniparc
 
 To be specific, Q, V and K are vectors obtained through the linear layer linear 666; 666
 
-![image-20230316002317419](assets/image-20230316002317419.png)
+![image-20230316002317419](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230316002317419.png)
 
 
 
@@ -132,13 +132,13 @@ To be specific, Q, V and K are vectors obtained through the linear layer linear 
 
 其中b{}表示所节点向量的集合，b下标表示节点单独一个向量
 
-![image-20230315235145674](assets/image-20230315235145674.png)
+![image-20230315235145674](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315235145674.png)
 
 **多标签的PPI预测**
 
 对于蛋白质和蛋白质二输出的向量结果进行点积，然后利用全连接进行分类。 标签和标签的值计算交叉熵优化方法---从结果来看是output了7个值
 
-![image-20230315230522269](assets/image-20230315230522269.png)
+![image-20230315230522269](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315230522269.png)
 
 **4 AFTGAN model setting**
 
@@ -154,19 +154,19 @@ AFTGAN模型主要包括蛋白质序列特征提取模块，该模块由Transfor
 
  		Hamming Loss, Precision, Recall and Micro-F1	
 
-![image-20230316144345815](assets/image-20230316144345815.png)
+![image-20230316144345815](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230316144345815.png)
 
 ## 补充
 
 **Siamese network**就是“连体的神经网络”，神经网络的“连体”是通过共享权值来实现的，如下图所示。
 
-![img](assets/v2-5070e28622a2f3ee9e3cb5d2259fae86_r.jpg)
+![img](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/v2-5070e28622a2f3ee9e3cb5d2259fae86_r.jpg)
 
 
 
 **深度残差循环卷积神经网络**https://zhuanlan.zhihu.com/p/22447440
 
-![img](assets/90e58f36fc1b0ae42443b69176cc2a75_r.jpg)
+![img](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/90e58f36fc1b0ae42443b69176cc2a75_r.jpg)
 
 **掩码语言模型(Masked Language Model)mlm**
 
@@ -174,37 +174,37 @@ Transformer-model 相对RNN缺少了前后位置关系，所以需要添加位�
 
 
 
-![image-20230315160019307](assets/image-20230315160019307.png)
+![image-20230315160019307](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315160019307.png)
 
 Transformer-model 相对RNN缺少了前后位置关系
 
-![image-20230315160359905](assets/image-20230315160359905.png)
+![image-20230315160359905](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315160359905.png)
 
-![image-20230315160710494](assets/image-20230315160710494.png)
+![image-20230315160710494](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315160710494.png)
 
-![image-20230315160834195](assets/image-20230315160834195.png)
+![image-20230315160834195](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315160834195.png)
 
 sin cos 体现得是绝对位置信息 但是又体现得相对位置信息
 
-![image-20230315161403207](assets/image-20230315161403207.png)
+![image-20230315161403207](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315161403207.png)
 
 注意力机制-- QKV三个矩阵
 
-![image-20230315161549837](assets/image-20230315161549837.png)
+![image-20230315161549837](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315161549837.png)
 
 
 
 QUERY 与KEY之间并行点乘  --- 算内积  及cos相似性类似--得到向量之间相似性
 
-![image-20230315161950025](assets/image-20230315161950025.png)
+![image-20230315161950025](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315161950025.png)
 
-![image-20230315162312450](assets/image-20230315162312450.png)
+![image-20230315162312450](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315162312450.png)
 
 除以dk为softmax控制方差和梯度
 
 多头注意力机制
 
-![image-20230315162744699](assets/image-20230315162744699.png)
+![image-20230315162744699](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315162744699.png)
 
 batch Normal 和 Layer Normalization
 
@@ -212,19 +212,19 @@ BN对不同样本进行标准化，优点能解决内部协变量偏移，缓解
 
 会丢失掉掉同样本内前后得关系，在RNN中输入值或者对于输入特征为变化得时候那么是会变化得，同样位置可能不是同一纬度
 
-![image-20230315163507771](assets/image-20230315163507771.png)
+![image-20230315163507771](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315163507771.png)
 
 Layer 样本内做标准化对同一个样本内部纬度进行标准化。
 
-![+](assets/image-20230315164411647.png)
+![+](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315164411647.png)
 
-![image-20230315164743476](assets/image-20230315164743476.png)
+![image-20230315164743476](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315164743476.png)
 
-![image-20230315164507599](assets/image-20230315164507599.png)
+![image-20230315164507599](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315164507599.png)
 
-![image-20230315165148641](assets/image-20230315165148641.png)
+![image-20230315165148641](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315165148641.png)
 
-![image-20230315165355695](assets/image-20230315165355695.png)
+![image-20230315165355695](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315165355695.png)
 
 
 ## 想法，
