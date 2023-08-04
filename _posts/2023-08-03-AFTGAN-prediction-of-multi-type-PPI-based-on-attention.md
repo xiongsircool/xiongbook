@@ -1,3 +1,11 @@
+---
+layout: post
+title: AFTGAN: prediction of multi-type PPI based on attention free transformer and graph attention network
+categories: 方法
+description: AFTGAN 一个新的神经网络模型构建用于预测多种类型的PPI。在特征输入方面，除了氨基酸共现相似度和一热编码外，还加入了含有大量蛋白质生物信息的ESM-1b嵌入作为蛋白质序列特征
+keywords: AFTGAN, 图,生物信息方法
+---
+
 | layout | title                                                        | categories | description                                                  | keywords                |
 | ------ | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ | ----------------------- |
 | post   | AFTGAN: prediction of multi-type PPI based on attention free transformer and graph attention network | 图方法     | AFTGAN 一个新的神经网络模型构建用于预测多种类型的PPI。在特征输入方面，除了氨基酸共现相似度和一热编码外，还加入了含有大量蛋白质生物信息的ESM-1b嵌入作为蛋白质序列特征。 | AFTGAN, 图,生物信息方法 |
