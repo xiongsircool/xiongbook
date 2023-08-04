@@ -1,14 +1,17 @@
 ---
 layout: page
 title: About
-description: Hello Word
-keywords: WINDOWS USER
+description: 打码改变世界
+keywords: Zhuang Ma, 马壮
 comments: true
 menu: 关于
-permalink: /about
+permalink: /about/
 ---
 
-争取毕业工资到2W
+
+仰慕「优雅编码的艺术」。
+
+坚信熟能生巧，努力改变人生。
 
 ## 联系
 
@@ -18,12 +21,11 @@ permalink: /about
 {% endfor %}
 {% if site.url contains 'mazhuang.org' %}
 <li>
-Bu是公众号：<br />
-<img style="height:320px;width:320px;border:1px solid lightgrey;" src="{{ site.url }}/assets/images/qrcode.jpg" alt="什么也没有" />
+不是：<br />
+<img style="height:192px;width:192px;border:1px solid lightgrey;" src="{{ site.url }}/assets/images/qrcode.jpg" alt="闷骚的程序员" />
 </li>
 {% endif %}
 </ul>
-
 
 
 ## Skill Keywords
