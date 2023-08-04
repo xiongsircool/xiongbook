@@ -5,14 +5,10 @@ description: Hello Word
 keywords: WINDOWS USER
 comments: true
 menu: 关于
-permalink: /about/
+permalink: /about
 ---
 
-我是马壮，码而生，码而立。
-
-仰慕「优雅编码的艺术」。
-
-坚信熟能生巧，努力改变人生。
+争取毕业工资到2W
 
 ## 联系
 
@@ -23,7 +19,7 @@ permalink: /about/
 {% if site.url contains 'mazhuang.org' %}
 <li>
 Bu是公众号：<br />
-<img style="height:192px;width:192px;border:1px solid lightgrey;" src="{{ site.url }}/assets/images/zhanyong.jpg" alt="什么也没有" />
+<img style="height:192px;width:192px;border:1px solid lightgrey;" src="{{ site.url }}/assets/images/test.jpg" alt="什么也没有" />
 </li>
 {% endif %}
 </ul>
