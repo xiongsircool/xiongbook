@@ -19,7 +19,7 @@ permalink: /about
 {% if site.url contains 'mazhuang.org' %}
 <li>
 Bu是公众号：<br />
-<img style="height:192px;width:192px;border:1px solid lightgrey;" src="{{ site.url }}/assets/images/test.jpg" alt="什么也没有" />
+<img style="height:320px;width:320px;border:1px solid lightgrey;" src="{{ site.url }}/assets/images/qrcode.jpg" alt="什么也没有" />
 </li>
 {% endif %}
 </ul>
