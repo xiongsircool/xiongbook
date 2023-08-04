@@ -1,8 +1,8 @@
 # ---------------- #
 #   Main Configs   #
 # ---------------- #
-baseurl:
-url: https://xiongsircool.github.io/xiongbook
+baseurl: https://xiongsircool.github.io/xiongbook
+url: https://xiongsircool.github.io/xiongbook/
 date_format: "ordinal"
 title: 熊的博客
 subtitle: "什么也别说"
