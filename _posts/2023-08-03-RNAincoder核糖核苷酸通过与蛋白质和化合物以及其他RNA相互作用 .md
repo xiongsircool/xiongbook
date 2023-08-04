@@ -18,7 +18,7 @@ keywords: AFTGAN,RNA,interaction , 生物信息方法
 4 结论:通过对基准数据集的案例研究，广泛验证了RNAincoder的有效性。所以RNAincoder是一个在提供RNA有关相互作用有关的更准确表示展示出卓越能力的工具，其可以作为其他可用工具的一种补充
 RNAincoder can be accessed at https://idrblab.org/rnaincoder/
 
-![image-20230515155425446](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/posts/assets/image-20230515155425446.png)
+![image-20230515155425446](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230515155425446.png)
 
 单词
 
@@ -116,4 +116,4 @@ RNAincoder的评估 ROC-AUC，马修思相关系数MCC,准确度ACC,精密度PRE
 
 
 
-![image-20230515191255054](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/posts/assets/image-20230515191255054.png)
+![image-20230515191255054](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230515191255054.png)

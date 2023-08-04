@@ -138,7 +138,7 @@ To be specific, Q, V and K are vectors obtained through the linear layer linear 
 
 对于蛋白质和蛋白质二输出的向量结果进行点积，然后利用全连接进行分类。 标签和标签的值计算交叉熵优化方法---从结果来看是output了7个值
 
-![image-20230315230522269](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315230522269.png)
+![image-20230315230522269](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-20230315230522269.png)
 
 **4 AFTGAN model setting**
 
