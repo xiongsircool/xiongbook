@@ -723,3 +723,8 @@ testdata[['sample_id','age']].to_csv('submit.txt',index=False) # 将sample_id和
 
 ![img](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/e66c62fe-5e0a-4d4b-91db-63d70ad43b0b.png)
 
+
+
+### 补充
+
+官方比赛时使用的时决策树这种方法，但是年龄时连续的，虽然这里面记录时int数值，但是我觉得可能对连续值使用向下取整数可能更符合，所以我觉得我们可以尝试使用连续值得方法来解决问题。可以尝试一些其他得模型吧。
