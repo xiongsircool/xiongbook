@@ -1,23 +1,12 @@
 ---
 layout: 首届世界科学智能大赛：生命科学赛道——生物学年龄评价与年龄相关疾病风险预测
-title: 首届世界科学智能大赛：生命科学赛道——生物学年龄评价与年龄相关疾病风险预测笔记一
-description: 这次是阿里云天梯赛，举办的第一个生物赛道，这个所有人都可参加，本科研究身等都可以。这次比赛基于甲基化数据，这里的甲基化数据指的是区段覆盖率的值，一共有50万个特征然后去做分析。预测真实年龄大概是这个意思，还有一个要求就是患者年龄比实际年龄应该大。所以拟合函数应该有两个。
-keywords: 比赛，甲基化数据处理,决策树
+title: "首届世界科学智能大赛：生命科学赛道——生物学年龄评价与年龄相关疾病风险预测笔记一"
+description: "这次是阿里云天梯赛，举办的第一个生物赛道，这个所有人都可参加，本科研究身等都可以。这次比赛基于甲基化数据，这里的甲基化数据指的是区段覆盖"
+keywords: Games, Methylation Data Processing, Decision Trees
 ---
 
 
-
 ![1692366200379](assets/1692366200379.png)
-
-
-
-
-
-
-
-
-
-
 
 ## 赛题背景
 
@@ -39,7 +28,7 @@ keywords: 比赛，甲基化数据处理,决策树
 
 本次任务采用多个指标来进行评测，初赛和复赛评价指标有差异，作为本次教程仅介绍初赛评价指标。初赛是将两个指标（健康样本MAE和患病样本MAE）进行计算，取平均得到最终分数。
 
-![img](/assets/whiteboard_exported_image.png)
+![img](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/whiteboard_exported_image.png)
 
 
 
@@ -78,7 +67,7 @@ keywords: 比赛，甲基化数据处理,决策树
 
 因为比赛官方提供了官方的baseline代码，所以我这一版本笔记先是给大家看下基础的baseline代码。
 
-代码下载[链接](/assets/life-baseline.ipynb)
+代码下载[链接](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/life-baseline.ipynb)
 
 `pip install numpy pandas polars xgboost lightgbm catboost scikit-learn`
 
@@ -178,7 +167,7 @@ $$
 
 
 
-## 精读Baseline 这个baseline
+## 精读Baseline 这个baseline的解决方法就是利用的
 
 1. ## **导入模块**
 
