@@ -1,5 +1,5 @@
 ---
-layout: 首届世界科学智能大赛：生命科学赛道——生物学年龄评价与年龄相关疾病风险预测
+layout: post
 title: 首届世界科学智能大赛：生命科学赛道——生物学年龄评价与年龄相关疾病风险预测笔记一
 description: 这次是阿里云天梯赛，举办的第一个生物赛道，这个所有人都可参加，本科研究身等都可以。这次比赛基于甲基化数据，这里的甲基化数据指的是区段覆盖率的值，一共有50万个特征然后去做分析。预测真实年龄大概是这个意思，还有一个要求就是患者年龄比实际年龄应该大。所以拟合函数应该有两个。
 keywords: 比赛,甲基化数据处理,决策树
@@ -450,7 +450,7 @@ def catboost_model(train_x, train_y, test_x, seed = 2023):
         
         # 创建CatBoostRegressor模型实例
         # 根据自己的算力与精力，调整iterations，V100环境iterations=500需要跑10min
-        model = CatBoostRegressor(iterations=500, **params)
+        model = CatBoostRegressor(iterations=500, **params)            # 这里的iterations指定了树的数目也就是500课数目
         # 使用训练集和验证集拟合模型
         model.fit(trn_x, trn_y, # 训练集的特征和标签，用于模型的训练。
                   eval_set=(val_x, val_y), # 验证集的特征和标签，用于在训练过程中评估模型性能。
