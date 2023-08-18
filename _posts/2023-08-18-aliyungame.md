@@ -1,14 +1,15 @@
 ---
 layout: 首届世界科学智能大赛：生命科学赛道——生物学年龄评价与年龄相关疾病风险预测
-title: "首届世界科学智能大赛：生命科学赛道——生物学年龄评价与年龄相关疾病风险预测笔记一"
-description: "这次是阿里云天梯赛，举办的第一个生物赛道，这个所有人都可参加，本科研究身等都可以。这次比赛基于甲基化数据，这里的甲基化数据指的是区段覆盖"
-keywords: Games, Methylation Data Processing, Decision Trees
+title: 首届世界科学智能大赛：生命科学赛道——生物学年龄评价与年龄相关疾病风险预测笔记一
+description: 这次是阿里云天梯赛，举办的第一个生物赛道，这个所有人都可参加，本科研究身等都可以。这次比赛基于甲基化数据，这里的甲基化数据指的是区段覆盖率的值，一共有50万个特征然后去做分析。预测真实年龄大概是这个意思，还有一个要求就是患者年龄比实际年龄应该大。所以拟合函数应该有两个。
+keywords: 比赛,甲基化数据处理,决策树
 ---
 
 
-![1692366200379](assets/1692366200379.png)
 
 ## 赛题背景
+
+![1692366200379](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/1692366200379.png)
 
 生物学年龄评价是一种通过测量和分析生物体内特定指标或生理过程的状态，以评估个体的生理年龄和健康状况的方法。与传统的日历年龄相比，生物学年龄可以提供更准确的健康评估和疾病风险预测。随着 AI 技术的不断发展，计算科学与生命科学的整合与发展将为健康管理应用开发、衰老机制研究、抗衰老药物研发提供前沿的思路与方法。基于上述背景，我们举办基于甲基化测量数据预测生物学年龄的比赛。
 
@@ -67,7 +68,7 @@ keywords: Games, Methylation Data Processing, Decision Trees
 
 因为比赛官方提供了官方的baseline代码，所以我这一版本笔记先是给大家看下基础的baseline代码。
 
-代码下载[链接](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/life-baseline.ipynb)
+代码下载[链接](/https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/life-baseline.ipynb)
 
 `pip install numpy pandas polars xgboost lightgbm catboost scikit-learn`
 
@@ -291,21 +292,21 @@ testdata.to_pickle(f'{path}/testdata.pkl') # 将处理后的测试数据保存�
 trainmap.head()
 ```
 
-![img](https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=NGRkODczMDY5ZTUyNWYyOTcxMDVlZjc0MzVjMWQ0OTVfeWdoUURxTzUwS3Vmb2FsYXVtcDFrbFRKeURlM1JIN0tfVG9rZW46V21VbGJRSzlTbzZJcDN4c3dncGNNSGNGblJlXzE2OTIzNjM0MzI6MTY5MjM2NzAzMl9WNA)
+![img](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/c29c2437-553f-453c-be24-a004cb78be58.png)
 
 ```Python
 # 使用 head() 函数查看前几行数据
 traindata.head()
 ```
 
-![img](https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=YTQ3OTEzNjdmZGNiY2Q5MjNmODNjMTNmZGNiNzQwMTVfRkM3dGw2UFhGZlE2SjJoT2hPQVBiQVlzck9zNVBUb3RfVG9rZW46RFRMOWJReDB5b2xRNVl4bWxZRGNKNmx1bkFnXzE2OTIzNjM0MzI6MTY5MjM2NzAzMl9WNA)
+![img](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/f930acb3-3372-4888-9ecf-565bfe3dfd6b.png)
 
 ```Python
 # info()的方法，用于显示有关数据集的信息，例如列名、数据类型、非空值数量和内存使用情况等。
 traindata.info()
 ```
 
-![img](https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=MzBkODQ4MWI3ZGYxNWRlZjhmYzkxYWM2MmU3MWM4ZTFfZXlSME04Mm9rRWJtQ1daQWpYaFpwMmpNWE5kbFFLdDJfVG9rZW46U1p2cGJCWUFqb1dIS214b2JpRGNRWkxjbjBjXzE2OTIzNjM0MzI6MTY5MjM2NzAzMl9WNA)
+![img](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/87b5759c-fe08-465b-aeb3-477f6827e0bc.png)
 
 经过上面简单的信息展示，可以发现trainmap中的gender、sample_type、disease为字符串类型的特征，需要进行转换为数值类型。traindata数据已经调整为每行代表一个样本的结构，每列表示一个特征。
 
@@ -320,7 +321,7 @@ for i in range(10):
     print(f'特征{i}，对应的缺失率为{null_cnt}')
 ```
 
-![img](https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=ZWQ4MmNiNTcxYWQ0NjdlNWQ1ZjlmMDRjZGM3NjZlMDFfeUtqUUxqblRwbWNWRkk3YjN3OGpWNEF1YzcwdTA3NVhfVG9rZW46SDV2RGJjSEpYb3FycGV4ZXRCdmNsd0lBbmpjXzE2OTIzNjM0MzI6MTY5MjM2NzAzMl9WNA)
+![img](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/cf269a00-e5b8-42de-8f1a-411e33681675.png)
 
 下面使用DataFrame自带的corr()方法展示前1000个特征之间的相关性分数，大于0为正相关，小于0为负相关。
 
@@ -329,7 +330,7 @@ for i in range(10):
 traindata[[i for i in range(1000)]].corr()
 ```
 
-![img](https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=MzI0MTdjNDNlNjkyZTgyNjk5ZjM1ZTMyMGNlNmZjZTdfMGdPaHVUeWVIOUtHczkxRmxqc0RkSmVBTUFCWHlwbGVfVG9rZW46TlNYaWJJSGJCbzF3QXh4UkkyUmNBWHY1bnVlXzE2OTIzNjM0MzI6MTY5MjM2NzAzMl9WNA)
+![img](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/16ebaa4f-30f7-49d3-b9db-8a88c3413df4.png)
 
 1. ## **数据清洗**
 
@@ -418,7 +419,7 @@ cols = [i for i in range(10000)] + ['gender','max','min','std','var','skew','mea
 
 4、最后将K折预测结果取平均作为最终提交结果。
 
-![img](https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=ODNkNGZlYjJlMTFlMzJkN2U2M2IzODU2M2FjNmVkN2VfZVFsVmplblhaQmk0QUN5djBaSVNMZGJEV292ODBDUzNfVG9rZW46WTFDMGJabTBEbzNGckZ4U2xnWWNTakVVbjllXzE2OTIzNjM0MzI6MTY5MjM2NzAzMl9WNA)
+![img](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/1e1d5f32-1883-4400-9eb5-b638bccadd91.png)
 
 具体代码如下：
 
