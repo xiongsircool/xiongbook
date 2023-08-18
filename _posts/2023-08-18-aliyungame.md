@@ -6,7 +6,6 @@ keywords: 比赛,甲基化数据处理,决策树
 ---
 
 
-
 ## 赛题背景
 
 ![1692366200379](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/1692366200379.png)
@@ -15,17 +14,17 @@ keywords: 比赛,甲基化数据处理,决策树
 
 这项比赛将结合计算科学和生命科学的发展，为健康管理应用的开发、衰老机制的研究以及抗衰老药物的研发提供前沿的思路和方法。传统的日历年龄只提供了时间上的度量，而生物学年龄则更加关注个体的生理状态和功能。通过测量和分析生物体内的特定指标或生理过程的状态，我们能够更准确地评估个体的生理年龄和健康状况，这对于健康管理和疾病风险预测至关重要。参赛者可以利用甲基化测量数据来预测生物学年龄。本次比赛将为研究人员和开发人员提供机会，合作解决生物学年龄评估中的挑战，并推动相关领域的进步。最终的目标是提供更精确、可靠和个性化的生物学年龄评估工具，为人们的健康管理和抗衰老策略提供有力支持。
 
-## 赛事任务
+### 赛事任务
 
 本次比赛提供健康人和年龄相关疾病患者的甲基化数据，期待选手通过分析甲基化数据的模式和特征建立预测模型，可以根据某个人的甲基化数据来预测其生物学年龄。
 
-## 赛题数据集
+### 赛题数据集
 
 公开数据包含10296个样本，其中7833个样本为健康样本。每一个样本提供485512个位点的甲基化数据、年龄与患病情况。抽取80%作为训练样本，20%作为测试样本。
 
 以训练集为例，一共包括8233样本，其中健康样本6266个，其余为患病样本，共涉及Alzheimer's disease，schizophrenia，Parkinson's disease，rheumatoid arthritis，stroke，Huntington's disease，Graves' disease，type 2 diabetes，Sjogren's syndrome等类型。
 
-## 评价指标
+### 评价指标
 
 本次任务采用多个指标来进行评测，初赛和复赛评价指标有差异，作为本次教程仅介绍初赛评价指标。初赛是将两个指标（健康样本MAE和患病样本MAE）进行计算，取平均得到最终分数。
 
@@ -35,22 +34,22 @@ keywords: 比赛,甲基化数据处理,决策树
 
 
 
-## 解题思路
+### 解题思路
 
 本题初赛任务是预测样本年龄，属于典型的回归问题。输入数据为每一个样本对应的485512个位点的甲基化数据与患病情况，输出为样本对应年龄。
 
-### 特征处理
+#### 特征处理
 
 - **高维特征**：所提供的特征纬度非常高（485512维），这为特征选择和处理带来了挑战。
 - **特征选择**：可以考虑基本的特征选择方法，如覆盖率、相关性、特征重要性等。
 - **快速原型**：为了快速验证模型效果，可以先仅使用部分特征快速跑通流程，后续再考虑如何添加更多特征。
 
-### 模型选择
+#### 模型选择
 
 - **机器学习模型**：如xgboost，这类模型不需要进行缺失值填充和数据标准化操作，效果比较稳定。
 - **深度学习模型**：需要进行缺失值填充和数据标准化操作，网络搭建也需要更多的尝试。
 
-### 建议
+#### 建议
 
 鉴于上述对比，建议在Baseline中选择使用机器学习方法。在解决机器学习问题时，一般会遵循以下流程：
 
@@ -64,7 +63,7 @@ keywords: 比赛,甲基化数据处理,决策树
 
 
 
-## 官方Baseline代码解析
+### 官方Baseline代码解析
 
 因为比赛官方提供了官方的baseline代码，所以我这一版本笔记先是给大家看下基础的baseline代码。
 
@@ -76,13 +75,13 @@ keywords: 比赛,甲基化数据处理,决策树
 
 <span style="color:blue">其次，我们将详细分析官方的Baseline代码。在这个过程中，我们会发现官方代码中的某些部分与我们通常的处理方式存在差别。这些差别可能是由于数据的特性、比赛的要求或其他原因造成的。我们将一一解析这些差别，并讨论其背后的原因。</span>
 
-## 先验证的笔记
+### 先验证的笔记
 
-## 数据处理
+### 数据处理
 
 在处理生物学年龄评价的数据时，我们实际上是按照线性连续数据进行处理的，这意味着我们不需要具备生物信息经验。关键在于如何选择和处理特征。
 
-### 特征选择的重要性
+#### 特征选择的重要性
 
 预测的准确性很大程度上取决于我们如何选择特征。以下是一些建议的步骤来进行特征选择：
 
@@ -93,7 +92,7 @@ keywords: 比赛,甲基化数据处理,决策树
 3. **去除冗余特征**：
    在某些情况下，两个或多个特征之间可能存在高度的相关性。这些特征可能会为模型提供相似或重复的信息。在这种情况下，保留一个特征并去除其他相关特征可以帮助减少模型的复杂性，并防止过拟合。
 
-## 模型选择的考虑因素
+### 模型选择的考虑因素
 
 1. **数据的大小和维度**：
    对于大规模数据或高维数据，某些模型可能更适合，而其他模型可能会遇到性能问题。
@@ -108,7 +107,7 @@ keywords: 比赛,甲基化数据处理,决策树
 
 ------
 
-## 常用的模型
+### 常用的模型
 
 1. **线性模型**：
    如线性回归、逻辑回归。适用于关系大致是线性的数据。
@@ -127,16 +126,16 @@ keywords: 比赛,甲基化数据处理,决策树
 
 ------
 
-### 梯度提升决策树 (GBDT)
+#### 梯度提升决策树 (GBDT)
 
 梯度提升决策树（Gradient Boosted Decision Trees，简称GBDT）是一种迭代的决策树算法，它通过加入新的树来纠正之前树的错误。GBDT是梯度提升方法与决策树算法的结合。
 
-#### 基本思想：
+###### 基本思想：
 
 - **Boosting**：Boosting是一种集成学习方法，它的基本思想是将多个弱学习器组合成一个强学习器。在每一轮迭代中，Boosting方法都会为之前分类错误的样本增加更大的权重，然后训练一个新的学习器来纠正之前的错误。
 - **梯度提升**：梯度提升是一种迭代的方法，它通过计算损失函数的负梯度来更新模型。在每一轮迭代中，都会训练一个新的模型来拟合当前模型的负梯度（也称为残差或伪残差），然后将新模型的预测结果与当前模型的预测结果相加。
 
-#### 数学公式：
+###### 数学公式：
 假设我们的损失函数为 
 
 $$
@@ -157,7 +156,7 @@ $$
 
 这个过程会重复多次，直到满足某个停止准则（例如达到最大迭代次数或损失函数的值小于某个阈值）。
 
-#### 特点：
+###### 特点：
 
 - GBDT可以用于分类和回归问题。
 - GBDT对异常值和非线性关系都有很好的鲁棒性。
@@ -168,9 +167,9 @@ $$
 
 
 
-## 精读Baseline 这个baseline的解决方法就是利用的
+### 精读Baseline 这个baseline的解决方法就是利用的
 
-1. ## **导入模块**
+1. ### **导入模块**
 
 导入我们本次Baseline代码所需的模块
 
@@ -201,7 +200,7 @@ from sklearn.metrics import mean_absolute_error
 warnings.filterwarnings('ignore')
 ```
 
-1. ## **数据探索**
+1. ### **数据探索**
 
 数据探索性分析，是通过了解数据集，了解变量间的相互关系以及变量与预测值之间的关系，对已有数据在尽量少的先验假设下通过作图、制表、方程拟合、计算特征量等手段探索数据的结构和规律的一种数据分析方法，从而帮助我们后期更好地进行特征工程和建立模型，是机器学习中十分重要的一步。
 
@@ -332,7 +331,7 @@ traindata[[i for i in range(1000)]].corr()
 
 ![img](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/16ebaa4f-30f7-49d3-b9db-8a88c3413df4.png)
 
-1. ## **数据清洗**
+1. ### **数据清洗**
 
 数据和特征决定了机器学习的上限，而模型和算法只是逼近这个上限而已。俗话说：garbage in, garbage out。分析完数据后，特征工程前，必不可少的步骤是对数据清洗。
 
@@ -374,7 +373,7 @@ traindata['gender'] = traindata['gender'].map(gender_mapping)
 testdata['gender'] = testdata['gender'].map(gender_mapping)
 ```
 
-1. ## **特征工程**
+1. ### **特征工程**
 
 特征工程指的是把原始数据转变为模型训练数据的过程，目的是获取更好的训练数据特征。特征工程能使得模型的性能得到提升，有时甚至在简单的模型上也能取得不错的效果。
 
@@ -403,7 +402,7 @@ testdata['median'] = testdata[[i for i in range(10000)]].median(axis=1)
 cols = [i for i in range(10000)] + ['gender','max','min','std','var','skew','mean','median']
 ```
 
-1. ## 模型训练与验证
+1. ### 模型训练与验证
 
 特征工程也好，数据清洗也罢，都是为最终的模型来服务的，模型的建立和调参决定了最终的结果。模型的选择决定结果的上限， 如何更好的去达到模型上限取决于模型的调参。
 
@@ -492,15 +491,15 @@ def catboost_model(train_x, train_y, test_x, seed = 2023):
 cat_oof, cat_test = catboost_model(traindata[cols], traindata['age'], testdata[cols])
 ```
 
-![img](https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=YmZlZmQ0ZDkwNmJmYWJkYmE2NThhMjRiNDAyN2Y1ZGRfaHF0Mnk1OFV4cEU4VWUyb3Fhek00U0ZwdE9FSHBkRUlfVG9rZW46RG4zV2J3YkJpb0NhVWZ4UUxhemM0b3BRbk9tXzE2OTIzNjM0MzI6MTY5MjM2NzAzMl9WNA)
+![img](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/36e76fc0-322b-4099-abfa-0beab1db52cf.png)
 
 **特征重要性结果展示：**
 
-![img](https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=YjU4MDJkNDhhNTg1YTY1NmQ0NDllNDJkMmFkZmNkNzhfN0lwRktEek80SVkxSlRCY1l2TUVmMEp4M1ZoZEhpd3FfVG9rZW46S1hmYWJjaFBobzRXZXZ4bDgyUWNPQnFvblVnXzE2OTIzNjM0MzI6MTY5MjM2NzAzMl9WNA)
+![img](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/2a9660d9-1583-489c-971f-05f1476aa4df.png)
 
 细致的观察特征重要性排序，我们手动构建的max、min、mean这类特征并没有排到前面，这也大概率说明这类特征可能没有太多作用。
 
-1. ## **结果输出**
+1. ### **结果输出**
 
 [提交需要符合提交样例结果](https://tianchi.aliyun.com/competition/entrance/532114/submission/1117)，线上提交分数**3****.8****840**，能优化的空间还是非常大的。
 
@@ -516,5 +515,5 @@ testdata[['sample_id','age']].to_csv('submit.txt',index=False) # 将sample_id和
 
 **nrow**：读取数据行数，**iterations**：模型迭代次数，阿里云PAI-DSW提供的最高配免费算力**V100**
 
-![img](https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=ODdhYmU3OTgxMzcyYjUxMWE4ZGY2YTJiNDRjNjA0YjNfYnV0NXk5VE1lZUlzNHpyUURLbnBjQXg3QU9ocGJsQldfVG9rZW46SFNKNGJWV0l6b2Jxd1F4ajRCTWNBY25ablNnXzE2OTIzNjM0MzI6MTY5MjM2NzAzMl9WNA)
+![img](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/e66c62fe-5e0a-4d4b-91db-63d70ad43b0b.png)
 
