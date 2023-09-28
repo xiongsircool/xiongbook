@@ -1,9 +1,9 @@
 ---
 layout: post
 categories: Bioinformatics
-title: 关于常用功能分析的应用和总结(一)
-description:因为最近在找一些多组学分析的方法，但是在多组学分析方法介绍部分总会提到的几个2010年以前的单组学方法，但是也是沿用至今的方法，所以我就很感兴趣，想整理分享一下，不过也是我们在转录组或者差异分析中常用的方法: Over-Representation Analysis (ORA),Gene Set Enrichment Analysis (GSEA),
-Signaling Pathway Impact Analysis (SPIA2009).
+title: 关于常用功能分析的应用和总结【一】
+description:因为最近在找一些多组学分析的方法，但是在多组学分析方法介绍部分总会提到的几个2010年以前的单组学方法，但是也是沿用至今的方法，所以我就很感兴趣，想整理分享一下，不过也是我们在转录组或者差异分析中常用的方法: Over-Representation Analysis 【ORA】,Gene Set Enrichment Analysis 【GSEA】,
+Signaling Pathway Impact Analysis 【SPIA2009】.
 keywords: GSEA,ORA,GO analysis,功能分析
 ---
 
@@ -203,7 +203,7 @@ NES = \frac{ES - \mu}{\sigma}
 - \( \sigma \)：零假设分布的标准差
 
 
-![Alt text](assets/image-5.png)
+![Alt text](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-5.png)
 
 
 ----
@@ -218,7 +218,7 @@ SPIA 相较于ORA分析方式可以看下图也是文章中例子，a,b可能看
 
 Capturing the topology of the pathways and the position of the gene
 through the perturbation analysis. The figure shows a six-gene pathway with two DE genes (shown in gray) in two different situations. One of the two DE genes is in common (gene B) while the second gene is either a leafnode (a), or the entry point in the pathway (b). In (a), gene (F) cannot perturb the activity of other genes; in (b) gene (A) has the ability to influence the activity of all the remaining genes in the pathway, as the topology of the pathway indicates. An ORA would find the two situations equally (in)significant (PNDE =0.48 for a set of 20 monitored genes, out of which five are found to be DE). The perturbation evidence extracted by SPIA will give more significance to the situation in (b) (PPERT =0.24), even though fold-changes in (b) are almost twice as small as those in (a) (PPERT =0.57).
-![Alt text](assets/image-3.png)
+![Alt text](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-3.png)
 
 ```mermaid
 graph TD
@@ -358,7 +358,7 @@ PG = \int_{0}^{c} 1 \, dx + \int_{c}^{1} \frac{1}{x} \, dx = c - c \ln(c)
 
 现在，我们关心在这个 \( 1 \times 1 \) 平面上，\( c_i \) 以下（即比 \( c_i \) 更极端）的概率是多少。在数学上，这个可以通过计算超曲线 \( 1/(xy) = 1/z \) 或 \( xy = z \) 在 \( 1 \times 1 \) 平面上下和左侧区域的面积来完成。 这部分计算就对应了上面计算公式。
 
-![Alt text](assets/image-4.png)
+![Alt text](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-4.png)
 
 
 

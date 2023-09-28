@@ -6,8 +6,8 @@ description: lsblk,du,df,blkid 有关命令 查看挂载分区位置，挂载分
 keywords: Liunx,disk,运维,硬盘
 ---
 
-
 ## Liunx 银盘操作命令汇总 一
+
 ### lsblk 查看系统所有硬盘信息
 
 lsblk(list block) 用于列出当前系统所有磁盘与磁盘内的分区信息
