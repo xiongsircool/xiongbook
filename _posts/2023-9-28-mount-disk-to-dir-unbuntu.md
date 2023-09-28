@@ -215,12 +215,12 @@ graph LR;
     end
 
     subgraph Linux
-      F[Linux操作系统<br/>如Ubuntu];
+      F[Linux操作系统如Ubuntu];
       F --> G[识别硬盘与分区];
       G --> H[安装NTFS-3g工具 用于挂载NTFS分区];
       H --> I[创建挂载点 如/mnt/windows];
       I --> J[挂载NTFS分区到挂载点 挂载操作];
-      J --> K[在Linux中访问数据 I/O操）];
+      J --> K[在Linux中访问数据 I/O操];
     end
     A --> F[硬盘连接至Windows];
     K --> E[数据读取和写入 I/O操作];
