@@ -169,11 +169,7 @@ sudo mount -t ext4 /dev/sda /mnt/sd8T
 
 
 
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true });
-</script>
-<div class="mermaid">
+```mermaid
 graph LR;
   subgraph Windows
     A[硬盘制造] --> B[Windows分区工具 <br/>（如Disk Management）];
@@ -192,9 +188,42 @@ graph LR;
   end
   A --> F[硬盘连接至Windows];
   K --> E[数据读取和写入（<br/>I/O操作）];
+```
+
+
+
+
+
+
+
+
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+<div class="mermaid">
+graph LR;
+  subgraph Windows
+    A[硬盘制造] --> B[Windows分区工具 <br/>（如Disk Management）];
+    B --> C[创建分区<br/>（并格式化为NTFS）];
+    C --> D[分配盘符<br/>（如C:\\、D:\\）];
+    D --> E[存储数据至NTFS分区<br/>I/O操作];
+    end
+    subgraph Linux
+    F[Linux操作系统<br/>（如Ubuntu）];
+    F --> G[识别硬盘与分区];
+    G --> H[安装NTFS-3g工具<br/>（用于挂载NTFS分区）];
+    H --> I[创建挂载点<br/>（如/mnt/windows）];
+    I --> J[挂载NTFS分区到挂载点<br/>（挂载操作）];
+    J --> K[在Linux中访问数据<br/>（I/O操作）];
+  end
+  A --> F[硬盘连接至Windows];
+  K --> E[数据读取和写入（<br/>I/O操作）];
 </div>
 
 
+​    
 
 
 
