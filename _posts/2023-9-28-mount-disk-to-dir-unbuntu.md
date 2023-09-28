@@ -206,22 +206,22 @@ graph LR;
 
 
 <div class="mermaid">
-    graph TD;
-    subgraph Windows
-      A[硬盘制造] --> B[Windows分区工具 如Disk Management];
-      B --> C[创建分区 并格式化为NTF ];
-      C --> D[分配盘符 如C、D ];
-      D --> E[存储数据至NTFS分区 I/O操作];
-    end
+  graph TD;
+  subgraph Windows
+    A[硬盘制造] --> B[Windows分区工具 如Disk Management];
+    B --> C[创建分区 并格式化为NTFS];
+    C --> D[分配盘符 如C、D];
+    D --> E[存储数据至NTFS分区 I/O操作];
+  end
 
-    subgraph Linux
-      F[Linux操作系统如Ubuntu];
-      F --> G[识别硬盘与分区];
-      G --> H[安装NTFS-3g工具 用于挂载NTFS分区];
-      H --> I[创建挂载点 如/mnt/windows];
-      I --> J[挂载NTFS分区到挂载点 挂载操作];
-      J --> K[在Linux中访问数据 I/O操];
-    end
-    A --> F[硬盘连接至Windows];
-    K --> E[数据读取和写入 I/O操作];
-  </div>
+  subgraph Linux
+    F[Linux操作系统 如Ubuntu];
+    F --> G[识别硬盘与分区];
+    G --> H[安装NTFS-3g工具 用于挂载NTFS分区];
+    H --> I[创建挂载点 如/mnt/windows];
+    I --> J[挂载NTFS分区到挂载点 挂载操作];
+    J --> K[在Linux中访问数据 I/O操作];
+  end
+  A --> F[硬盘连接至Windows];
+  K --> E[数据读取和写入 I/O操作];
+</div>
