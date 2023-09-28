@@ -169,7 +169,11 @@ sudo mount -t ext4 /dev/sda /mnt/sd8T
 
 
 
-```mermaid
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+<div class="mermaid">
 graph LR;
   subgraph Windows
     A[硬盘制造] --> B[Windows分区工具 <br/>（如Disk Management）];
@@ -188,28 +192,6 @@ graph LR;
   end
   A --> F[硬盘连接至Windows];
   K --> E[数据读取和写入（<br/>I/O操作）];
-```
-
-
-
-
-
-
-
-
-
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true });
-</script>
-
-<div class="mermaid">
-  graph TD;
-  A[硬盘制造和分区] --> B[文件系统格式化];
-  B --> C[文件系统管理];
-  C --> D[操作系统识别];
-  D --> E[挂载文件系统];
-  E --> F[文件访问];
 </div>
 
 
