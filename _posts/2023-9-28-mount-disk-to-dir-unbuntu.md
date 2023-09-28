@@ -205,9 +205,6 @@ graph LR;
 
 
 
-
-
-```html
 <div class="mermaid">
     graph LR;
     subgraph Windows
