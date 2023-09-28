@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: Liunx
 title: liunx如何查看硬盘,分区，以及目录信息
 description: lsblk,du,df,blkid 有关命令 查看挂载分区位置，挂载分区状态以及硬盘使用状态的简单查看信息命令汇总
 keywords: Liunx,disk,运维,硬盘
