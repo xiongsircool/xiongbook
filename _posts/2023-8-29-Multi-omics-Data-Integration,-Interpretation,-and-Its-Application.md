@@ -118,10 +118,10 @@ moderate    adj.有节制的；稳健的，温和的；适度的，中等的；<
 
 
 
-![Alt text](assets/image.png)
+![Alt text](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image.png)
 
 
 
 提供根据所使用的方法分组的综合工具和方法的示意图表示。
-![Alt text](assets/image-1.png)
+![Alt text](https://raw.githubusercontent.com/xiongsircool/xiongbook/master/_posts/assets/image-1.png)
 
