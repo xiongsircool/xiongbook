@@ -186,6 +186,33 @@ graph LR;
     I --> J[挂载NTFS分区到挂载点<br/>（挂载操作）];
     J --> K[在Linux中访问数据<br/>（I/O操作）];
   end
-
   A --> F[硬盘连接至Windows];
   K --> E[数据读取和写入（<br/>I/O操作）];
+```
+
+
+
+
+
+
+
+
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+
+<div class="mermaid">
+  graph TD;
+  A[硬盘制造和分区] --> B[文件系统格式化];
+  B --> C[文件系统管理];
+  C --> D[操作系统识别];
+  D --> E[挂载文件系统];
+  E --> F[文件访问];
+</div>
+
+
+
+
+
