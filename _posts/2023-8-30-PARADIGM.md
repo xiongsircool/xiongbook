@@ -1,11 +1,10 @@
 ---
 layout: post
-categories: Bioinformatics
 title: 关于常用功能分析的应用和总结二 多组学整合分析 PARADIGM
+categories: Bioinformatics
 description: 这是一个基于已知的pathway的结构，利用极大似然推断Pthway在个体中的活性状态，基于IPA通路激活情况聚类分型。
 keywords: pathway,功能分析,分型,多组学分析
 ---
-
 
 ## I nference of patient-specific pathway activities from multi-dimensional cancer genomics data using PARADIGM
 
