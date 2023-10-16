@@ -2,7 +2,7 @@
 layout: page
 title: About
 description: 打码改变世界
-keywords: Zhuang Ma, 马壮
+keywords: A Xiong, 阿熊
 comments: true
 menu: 关于
 permalink: /about/
@@ -22,10 +22,11 @@ permalink: /about/
 {% if site.url contains 'mazhuang.org' %}
 <li>
 不是：<br />
-<img style="height:192px;width:192px;border:1px solid lightgrey;" src="{{ site.url }}/assets/images/qrcode.jpg" alt="闷骚的程序员" />
+<img style="height:192px;width:192px;border:1px solid lightgrey;" src="{{ site.url }}/assets/images/qrcode.jpg" alt="" />
 </li>
 {% endif %}
 </ul>
+
 
 
 ## Skill Keywords
