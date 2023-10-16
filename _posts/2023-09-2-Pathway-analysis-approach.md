@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 关于常用功能分析的应用和总结（一）
+title: 关于常用功能分析的应用和总结一
 categories: Bioinformatics
 description: 因为最近在找一些多组学分析的方法，但是在多组学分析方法介绍部分总会提到的几个2010年以前的单组学方法，但是也是沿用至今的方法，所以我就很感兴趣，想整理分享一下，不过也是我们在转录组或者差异分析中常用的方法Over-Representation Analysis 【ORA】,Gene Set Enrichment Analysis 【GSEA】,
 Signaling Pathway Impact Analysis 【SPIA2009】
-keywords: AFTGAN, 图, 生物信息方法
+keywords: AFTGAN,图,生物信息方法
 ---
 
 
