@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: Liunx
-title: Ubuntu 挂载硬盘
+title: Ubuntu_挂载硬盘
 description: 最近一直在忙，忙完了华为杯，现在准备对自己组装的服务器进行一些优化，准备加一些模块用于方便运维，同时因为有个8T硬盘一直没有挂载上去所以我觉得有必要将硬盘挂载到某个目录下，这样我就可以开始利用snakemake搭建流程和开始跑一些自己的数据了。硬盘挂载其实也遇到了问题比如我挂载就是wrong fs type, bad option, bad superblock on /dev/sda, missing codepage or helper program, or other error.
 keywords: Liunx,disk,运维,硬盘,Ubuntu
 ---
