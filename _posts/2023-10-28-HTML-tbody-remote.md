@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 关于HTML tbody，theed，tfoot使用说明
-categories: HTML table tbody，theed，tfoot使用说明
+categories: HTML 
 description: 回忆一下 tbody，theed，tfoot 在table中干了什么.
 keywords: HTML,table
 ---
