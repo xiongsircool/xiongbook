@@ -1,8 +1,8 @@
 ---
 layout: post
-title: ImportError: attempted relative import with no known parent packag
+title: ImportError attempted relative import with no known parent packag
 categories: python
-description: 这是因为单独调用py文件时候，相对路径无法正确解析为绝对路径问题导致，也不是`__init__.py` 缺失问题.是因为我们调用的问题.所以解决这个问题一个是包外部进行调用一个是改变相对路径用法
+description: 这是因为单独调用py文件时候，相对路径无法正确解析为绝对路径问题导致，也不是__init__.py缺失问题.是因为我们调用的问题.所以解决这个问题一个是包外部进行调用一个是改变相对路径用法
 keywords: python error
 ---
 
