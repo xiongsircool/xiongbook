@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The ROS Wheel: Refining ROS Transcriptional Footprint
+title: The ROS Wheel：Refining ROS Transcriptional Footprint
 categories: Bioinformatics
 description: 这是一篇2016年的一篇文章但是其中有个meta分析思路我觉得非常有意思，一个是基于差异基因的list转化为研究与研究的聚类，对研究进行了聚类划分为8大类，同时作者利用REM 方式替换掉了原来的一致性简单取交集方法扩充了cluster中的差异基因数目.后续就常规的对cluster进行分析了，什么核心通路啊，核心基因，GSEA等
 keywords: Arabidopsis, method
